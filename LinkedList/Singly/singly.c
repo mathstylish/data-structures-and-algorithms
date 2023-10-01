@@ -67,7 +67,7 @@ void add_at_beginning(struct node **head, Data data)
     new_node->next = prev_head;
 }
 
-void add_at_position(struct node **head, Data data, int position)
+void add_after_position(struct node **head, Data data, int position)
 {
     if (position < 1 || position > size(*head))
     {
@@ -86,7 +86,6 @@ void add_at_position(struct node **head, Data data, int position)
         return;
     }
     curr = *head;
-    position--;
     while (position > 1)
     {
         curr = curr->next;
