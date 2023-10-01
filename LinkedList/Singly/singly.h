@@ -21,4 +21,6 @@ void add_at_beginning(struct node **head, Data data);
 void add_after_position(struct node **head, Data data, int position);
 void delete_first(struct node **head);
 void delete_last(struct node **head);
+void delete_at_position(struct node **head, int position);
+void delete_by_data_key(struct node **head, int key);
 void reverse(struct node **head);

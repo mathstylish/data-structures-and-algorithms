@@ -102,9 +102,9 @@ void delete_first(struct node **head)
         printf("Linked List is empty\n");
         return;
     }
-    struct node *to_delete = *head;
-    *head = to_delete->next;
-    free(to_delete);
+    struct node *curr = *head;
+    *head = curr->next;
+    free(curr);
 }
 
 void delete_last(struct node **head)
@@ -123,6 +123,64 @@ void delete_last(struct node **head)
     while (curr->next->next != NULL) curr = curr->next;
     free(curr->next);
     curr->next = NULL;
+}
+
+void delete_at_position(struct node **head, int position)
+{
+     if (position < 1 || position > size(*head))
+    {
+        printf("Invalid position. Position must be from 1 to current nodes in the list.\n");
+        return;
+    }
+    if (*head == NULL)
+    {
+        printf("Linked List is empty\n");
+        return;
+    }
+    struct node *curr = *head;
+    if (position == 1)
+    {
+        *head = curr->next;
+        free(curr);
+        return;
+    }
+    struct node *prev = NULL;
+    while (position > 1)
+    {
+        prev = curr;
+        curr = curr->next;
+        position--;
+    }
+    prev->next = curr->next;
+    free(curr);
+}
+
+void delete_by_data_key(struct node **head, int key)
+{
+    if (*head == NULL)
+    {
+        printf("Linked List is empty\n");
+        return;
+    }
+    struct node *curr = *head;
+    if ((*head)->data.key == key)
+    {
+        *head = (*head)->next;
+        free(curr);
+        return;
+    }
+    struct node *prev = NULL;
+    while (curr != NULL)
+    {
+        if (curr->data.key == key)
+        {
+            prev->next = curr->next;
+            free(curr);
+            return;
+        }
+        prev = curr;
+        curr = curr->next;
+    }
 }
 
 void clear_list(struct node **head)
