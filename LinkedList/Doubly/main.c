@@ -30,6 +30,8 @@ int main(void)
     add_at_end(&head, second_data);
     add_at_end(&head, third_data);
 
+    add_after_position(&head, fourth_data, 1);
+
     traverse(head);
 
     return 0;
