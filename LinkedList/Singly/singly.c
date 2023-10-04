@@ -75,17 +75,9 @@ void add_after_position(struct node **head, Data data, int position)
         return;
     }
     struct node *new_node = (struct node *)malloc(sizeof(struct node));
-    struct node *curr = NULL;
     new_node->data = data;
     new_node->next = NULL;
-    if (position == 1)
-    {
-        curr = *head;
-        *head = new_node;
-        new_node->next = curr;
-        return;
-    }
-    curr = *head;
+    struct node *curr = *head;
     while (position > 1)
     {
         curr = curr->next;
