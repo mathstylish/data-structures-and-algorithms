@@ -1,16 +1,14 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-typedef struct
-{
-    int key;
-    char *value;
+typedef struct {
+  int key;
+  char *value;
 } Data;
 
-struct node
-{
-    Data data;
-    struct node *next;
+struct node {
+  Data data;
+  struct node *next;
 };
 
 int size(struct node *head);

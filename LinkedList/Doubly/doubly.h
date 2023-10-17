@@ -1,14 +1,12 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-typedef struct
-{
+typedef struct {
   int key;
   char *value;
 } Data;
 
-struct node
-{
+struct node {
   Data data;
   struct node *next;
   struct node *prev;

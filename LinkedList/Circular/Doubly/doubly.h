@@ -1,11 +1,10 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct {
   int key;
   char *value;
 } Data;
-
 
 struct node {
   Data data;
