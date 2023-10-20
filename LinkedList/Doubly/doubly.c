@@ -30,7 +30,7 @@ void traverse(struct node *head) {
 }
 
 void add_at_end(struct node **head, Data data) {
-  struct node *new_node = (struct node *)malloc(sizeof(struct node));
+  struct node *new_node = malloc(sizeof(struct node));
   new_node->data = data;
   new_node->next = NULL;
   new_node->prev = NULL;
@@ -45,7 +45,7 @@ void add_at_end(struct node **head, Data data) {
 }
 
 void add_at_beginning(struct node **head, Data data) {
-  struct node *new_node = (struct node *)malloc(sizeof(struct node));
+  struct node *new_node = malloc(sizeof(struct node));
   new_node->data = data;
   new_node->next = NULL;
   new_node->prev = NULL;
@@ -66,7 +66,7 @@ void add_after_position(struct node **head, Data data, int position) {
         "list.\n");
     return;
   }
-  struct node *new_node = (struct node *)malloc(sizeof(struct node));
+  struct node *new_node = malloc(sizeof(struct node));
   new_node->data = data;
   new_node->next = NULL;
   new_node->prev = NULL;

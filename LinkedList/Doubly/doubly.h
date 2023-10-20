@@ -22,5 +22,4 @@ void delete_first(struct node **head);
 void delete_last(struct node **head);
 void delete_at_position(struct node **head, int position);
 void delete_by_data_key(struct node **head, int key);
-void clear_list(struct node **head);
 void reverse(struct node **head);

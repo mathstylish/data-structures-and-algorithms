@@ -28,7 +28,7 @@ struct node *linear_search(struct node *tail, int key) {
 }
 
 void add_at_beginning(struct node **tail, Data data) {
-  struct node *new_node = (struct node *)malloc(sizeof(struct node));
+  struct node *new_node = malloc(sizeof(struct node));
   new_node->data = data;
   if (*tail == NULL) {
     *tail = new_node;
@@ -43,7 +43,7 @@ void add_at_beginning(struct node **tail, Data data) {
 }
 
 void add_at_end(struct node **tail, Data data) {
-  struct node *new_node = (struct node *)malloc(sizeof(struct node));
+  struct node *new_node = malloc(sizeof(struct node));
   new_node->data = data;
   if (*tail == NULL) {
     *tail = new_node;
@@ -65,7 +65,7 @@ void add_after_position(struct node **tail, Data data, int position) {
         "list.\n");
     return;
   }
-  struct node *new_node = (struct node *)malloc(sizeof(struct node));
+  struct node *new_node = malloc(sizeof(struct node));
   new_node->data = data;
   struct node *curr = (*tail)->next;
   while (position > 1) {

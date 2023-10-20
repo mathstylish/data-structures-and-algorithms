@@ -30,7 +30,7 @@ void traverse(struct node *head) {
 }
 
 void add_at_end(struct node **head, Data data) {
-  struct node *new_node = (struct node *)malloc(sizeof(struct node));
+  struct node *new_node = malloc(sizeof(struct node));
   new_node->data = data;
   new_node->next = NULL;
   if (*head == NULL) {
@@ -43,7 +43,7 @@ void add_at_end(struct node **head, Data data) {
 }
 
 void add_at_beginning(struct node **head, Data data) {
-  struct node *new_node = (struct node *)malloc(sizeof(struct node));
+  struct node *new_node = malloc(sizeof(struct node));
   new_node->data = data;
   new_node->next = NULL;
   if (*head == NULL) {
@@ -62,7 +62,7 @@ void add_after_position(struct node **head, Data data, int position) {
         "list.\n");
     return;
   }
-  struct node *new_node = (struct node *)malloc(sizeof(struct node));
+  struct node *new_node = malloc(sizeof(struct node));
   new_node->data = data;
   new_node->next = NULL;
   struct node *curr = *head;
@@ -146,19 +146,6 @@ void delete_by_data_key(struct node **head, int key) {
     }
     prev = curr;
     curr = curr->next;
-  }
-}
-
-void clear_list(struct node **head) {
-  if (*head == NULL) {
-    printf("Linked List is already empty\n");
-    return;
-  }
-  struct node *curr = *head;
-  while (curr != NULL) {
-    curr = curr->next;
-    free(*head);
-    *head = curr;
   }
 }
 
