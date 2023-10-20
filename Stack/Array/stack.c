@@ -1,7 +1,7 @@
 #include "stack.h"
 
 void push(struct stack *stack, int data) {
-  if (stack->top == CAPACITY - 1) {
+  if (isFull(stack)) {
     printf("Stack overflow\n");
     return;
   }
@@ -9,7 +9,7 @@ void push(struct stack *stack, int data) {
   stack->data_arr[stack->top] = data;
 }
 int pop(struct stack *stack) {
-  if (stack->top == -1) {
+  if (isEmpty(stack)) {
     printf("Stack underflow\n");
     exit(1);
   }
@@ -18,18 +18,22 @@ int pop(struct stack *stack) {
   return popped;
 }
 
+bool isEmpty(struct stack *stack) { return stack->top == -1; }
+
+bool isFull(struct stack *stack) { return stack->top == CAPACITY - 1; }
+
 int peek(struct stack *stack) {
-  if (stack->top == -1) {
+  if (isEmpty(stack)) {
     printf("Stack undeflow\n");
     exit(1);
   }
   return stack->data_arr[stack->top];
 }
 
-void print(struct stack stack) {
-  if (stack.top == -1) {
+void print(struct stack *stack) {
+  if (isEmpty(stack)) {
     printf("Stack underflow\n");
     return;
   }
-  for (int i = stack.top; i > -1; i--) printf("%d\n", stack.data_arr[i]);
+  for (int i = stack->top; i > -1; i--) printf("%d\n", stack->data_arr[i]);
 }

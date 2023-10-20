@@ -1,7 +1,7 @@
 #include "stack.h"
 
 void push(struct node **top, int data) {
-  struct node *new_node = (struct node *)malloc(sizeof(struct node));
+  struct node *new_node = malloc(sizeof(struct node));
   new_node->data = data;
   new_node->next = NULL;
   if (*top == NULL) {
@@ -13,7 +13,7 @@ void push(struct node **top, int data) {
 }
 
 int pop(struct node **top) {
-  if (*top == NULL) {
+  if (isEmpty(*top)) {
     printf("Stack underflow\n");
     exit(1);
   }
@@ -24,10 +24,12 @@ int pop(struct node **top) {
   return popped;
 }
 
+bool isEmpty(struct node *top) { return top == NULL; }
+
 int peek(struct node *top) { return top->data; }
 
 void print(struct node *top) {
-  while (top != NULL) {
+  while (!isEmpty(top)) {
     printf("%d\n", top->data);
     top = top->next;
   }

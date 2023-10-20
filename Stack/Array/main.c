@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
   push(&stack, 87);
   push(&stack, 19);
 
-  print(stack);
+  print(&stack);
 
   // compile with "gcc -o test Stack/Array/stack.c Stack/Array/main.c"
   // run with ./test
