@@ -11,7 +11,7 @@ void push(struct stack *stack, int data) {
 int pop(struct stack *stack) {
   if (isEmpty(stack)) {
     printf("Stack underflow\n");
-    exit(1);
+    exit(EXIT_FAILURE);
   }
   int popped = stack->data_arr[stack->top];
   stack->top--;
@@ -25,7 +25,7 @@ bool isFull(struct stack *stack) { return stack->top == CAPACITY - 1; }
 int peek(struct stack *stack) {
   if (isEmpty(stack)) {
     printf("Stack undeflow\n");
-    exit(1);
+    exit(EXIT_FAILURE);
   }
   return stack->data_arr[stack->top];
 }
