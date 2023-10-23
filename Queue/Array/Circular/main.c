@@ -9,8 +9,21 @@ int main(void) {
   enqueue(&queue, 2);
   enqueue(&queue, 3);
   enqueue(&queue, 4);
+  enqueue(&queue, 7);
 
-  print(&queue);
+  dequeue(&queue);
 
-  return 0;
+  enqueue(&queue, 15);
+
+  dequeue(&queue);
+
+  enqueue(&queue, 20);
+
+  printf("%d ", queue.items[0]);
+  printf("%d ", queue.items[1]);
+  printf("%d ", queue.items[2]);
+  printf("%d ", queue.items[3]);
+  printf("%d\n", queue.items[4]);
+
+  return EXIT_SUCCESS;
 }

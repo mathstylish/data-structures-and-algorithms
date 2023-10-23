@@ -1,12 +1,12 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define LENGTH 5
+#define Q_LENGTH 5
 
 struct queue {
   int front;
   int rear;
-  int data[LENGTH];
+  int data[Q_LENGTH];
 };
 
 void enqueue(struct queue *queue, int item);

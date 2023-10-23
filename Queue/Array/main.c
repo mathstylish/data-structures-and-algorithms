@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 #include "queue.h"
 
 int main(void) {
@@ -19,5 +17,5 @@ int main(void) {
 
   print(&queue);
 
-  return 0;
+  return EXIT_SUCCESS;
 }

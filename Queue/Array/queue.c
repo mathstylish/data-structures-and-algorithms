@@ -27,7 +27,7 @@ int dequeue(struct queue *queue) {
   return dequeued;
 }
 
-bool isFull(struct queue *queue) { return queue->rear == LENGTH - 1; }
+bool isFull(struct queue *queue) { return queue->rear == Q_LENGTH - 1; }
 
 bool isEmpty(struct queue *queue) { return queue->front == -1; }
 
