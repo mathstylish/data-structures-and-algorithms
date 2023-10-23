@@ -5,7 +5,7 @@
 
 struct stack {
   int top;
-  int data_arr[CAPACITY];
+  int items[CAPACITY];
 };
 
 void push(struct stack *stack, int data);

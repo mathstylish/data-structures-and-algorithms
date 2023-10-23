@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 #include "stack.h"
 
 int main(void) {
@@ -20,5 +18,5 @@ int main(void) {
   int popped = pop(&top);
   printf("popped: %d\n", popped);
 
-  return 0;
+  return EXIT_SUCCESS;
 }

@@ -15,5 +15,5 @@ int main(int argc, char *argv[]) {
   // compile with "gcc -o test Stack/Array/stack.c Stack/Array/main.c"
   // run with ./test
 
-  return 0;
+  return EXIT_SUCCESS;
 }

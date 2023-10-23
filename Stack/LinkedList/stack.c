@@ -15,7 +15,7 @@ void push(struct node **top, int data) {
 int pop(struct node **top) {
   if (isEmpty(*top)) {
     printf("Stack underflow\n");
-    exit(EXIT_FAILURE);
+    return -1;
   }
   struct node *curr = *top;
   int popped = (*top)->data;
