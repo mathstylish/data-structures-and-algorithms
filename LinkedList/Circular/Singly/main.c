@@ -33,5 +33,5 @@ int main(void) {
 
   traverse(tail);
 
-  return 0;
+  return EXIT_SUCCESS;
 }
