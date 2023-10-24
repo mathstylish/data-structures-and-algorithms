@@ -7,6 +7,9 @@ void enqueue(struct queue *queue, int data) {
   }
   if (is_empty(queue)) {
     queue->front = 0;
+    queue->rear = 0;
+    queue->items[0] = data;
+    return;
   }
   queue->rear = (queue->rear + 1) % Q_LENGTH;
   queue->items[queue->rear] = data;
@@ -28,8 +31,7 @@ int dequeue(struct queue *queue) {
 }
 
 bool is_full(struct queue *queue) {
-  return (queue->front == queue->rear + 1) ||
-         (queue->front == 0 && queue->rear == Q_LENGTH - 1);
+  return (queue->rear + 1) % Q_LENGTH == queue->front;
 }
 
 bool is_empty(struct queue *queue) { return queue->front == -1; }
@@ -52,4 +54,6 @@ void print(struct queue *queue) {
     printf("%d ", queue->items[i]);
     i = (i + 1) % Q_LENGTH;
   }
+  printf("%d ", queue->items[i]);
+  printf("\n");
 }
