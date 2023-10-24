@@ -47,8 +47,8 @@ void print(struct queue *queue) {
     printf("Queue is empty\n");
     return;
   }
-  int i = 0;
-  while (queue->front != queue->rear) {
+  int i = queue->front;
+  while (i != queue->rear) {
     printf("%d ", queue->items[i]);
     i = (i + 1) % Q_LENGTH;
   }
