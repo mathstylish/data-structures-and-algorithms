@@ -23,7 +23,7 @@ int main(void) {
   printf("%d ", queue.items[1]);
   printf("%d ", queue.items[2]);
   printf("%d ", queue.items[3]);
-  printf("%d\n", queue.items[4]);
+  printf("%d\n", queue.items[4]);  // 15 20 3 4 7
 
   return EXIT_SUCCESS;
 }
