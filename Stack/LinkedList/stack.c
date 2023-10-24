@@ -26,7 +26,13 @@ int pop(struct node **top) {
 
 bool isEmpty(struct node *top) { return top == NULL; }
 
-int peek(struct node *top) { return top->data; }
+int peek(struct node *top) {
+  if (is_empty(top)) {
+    printf("Stack underflow\n");
+    return -1;
+  }
+  return top->data;
+}
 
 void print(struct node *top) {
   while (!isEmpty(top)) {
