@@ -1,11 +1,11 @@
 #include "queue.h"
 
 void enqueue(struct queue *queue, int data) {
-  if (isFull(queue)) {
+  if (is_full(queue)) {
     printf("Queue is full\n");
     return;
   }
-  if (isEmpty(queue)) {
+  if (is_empty(queue)) {
     queue->front = 0;
   }
   queue->rear = (queue->rear + 1) % Q_LENGTH;
@@ -13,7 +13,7 @@ void enqueue(struct queue *queue, int data) {
 }
 
 int dequeue(struct queue *queue) {
-  if (isEmpty(queue)) {
+  if (is_empty(queue)) {
     printf("Queue is empty\n");
     return -1;
   }
@@ -27,17 +27,17 @@ int dequeue(struct queue *queue) {
   return dequeued;
 }
 
-bool isFull(struct queue *queue) {
+bool is_full(struct queue *queue) {
   return (queue->front == queue->rear + 1) ||
          (queue->front == 0 && queue->rear == Q_LENGTH - 1);
 }
 
-bool isEmpty(struct queue *queue) { return queue->front == -1; }
+bool is_empty(struct queue *queue) { return queue->front == -1; }
 
 int peek(struct queue *queue) { return queue->items[queue->front]; }
 
 void print(struct queue *queue) {
-  if (isEmpty(queue)) {
+  if (is_empty(queue)) {
     printf("Queue is empty\n");
     return;
   }
