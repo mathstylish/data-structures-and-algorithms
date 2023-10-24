@@ -13,7 +13,7 @@ void push(struct node **top, int data) {
 }
 
 int pop(struct node **top) {
-  if (is_empty(*top)) {
+  if (isEmpty(*top)) {
     printf("Stack underflow\n");
     return -1;
   }
@@ -24,12 +24,12 @@ int pop(struct node **top) {
   return popped;
 }
 
-bool is_empty(struct node *top) { return top == NULL; }
+bool isEmpty(struct node *top) { return top == NULL; }
 
 int peek(struct node *top) { return top->data; }
 
 void print(struct node *top) {
-  while (!is_empty(top)) {
+  while (!isEmpty(top)) {
     printf("%d\n", top->data);
     top = top->next;
   }

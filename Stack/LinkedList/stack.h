@@ -9,6 +9,6 @@ struct node {
 
 void push(struct node **top, int data);
 int pop(struct node **top);
-bool is_empty(struct node *top);
+bool isEmpty(struct node *top);
 int peek(struct node *top);
 void print(struct node *top);

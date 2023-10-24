@@ -11,7 +11,7 @@ struct queue {
 
 void enqueue(struct queue *queue, int data);
 int dequeue(struct queue *queue);
-bool is_full(struct queue *queue);
-bool is_empty(struct queue *queue);
+bool isFull(struct queue *queue);
+bool isEmpty(struct queue *queue);
 int peek(struct queue *queue);
 void print(struct queue *queue);
