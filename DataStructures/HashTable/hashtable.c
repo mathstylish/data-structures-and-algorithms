@@ -25,6 +25,7 @@ struct node *create_node(char *key, char *value) {
   struct node *node = malloc(sizeof(struct node));
   node->key = key;
   node->value = value;
+  node->next = NULL;
   return node;
 }
 
