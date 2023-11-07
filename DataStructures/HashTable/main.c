@@ -1,18 +1,18 @@
+#include <stdio.h>
+
 #include "hashtable.h"
 
+// creates a new hash table
 int main(void) {
-  ch_hash *htable = ch_hash_new(ch_key_ops_string, ch_val_ops_string);
+  struct hash *hash = malloc(sizeof(struct hash));
 
-  ch_hash_put(htable, "Paris", "France");
-  ch_hash_put(htable, "Berlin", "Germany");
-  ch_hash_put(htable, "Warsaw", "Poland");
-  ch_hash_put(htable, "Bucharest", "Romania");
-  ch_hash_put(htable, "Athens", "Greece");
+  put(hash, "hello", "world");
+  put(hash, "spring", "framework");
 
-  printf("%s\n", (char *)ch_hash_get(htable, "Athens"));
-  printf("%s\n", (char *)ch_hash_get(htable, "Bucharest"));
+  remove_f(hash, "spring");
 
-  ch_hash_print(htable, ch_string_print, ch_string_print);
+  printf("%s\n", get(hash, "hello"));
+  printf("%s\n", get(hash, "spring"));
 
-  return 0;
+  return EXIT_SUCCESS;
 }
